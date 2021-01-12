@@ -1,4 +1,4 @@
-![Parking Enforcement](https://secureservercdn.net/45.40.150.81/xpm.570.myftpupload.com/wp-content/uploads/2019/11/Parking-enforcement-2.png?time=1609235610)]
+<img src="https://secureservercdn.net/45.40.150.81/xpm.570.myftpupload.com/wp-content/uploads/2019/11/Parking-enforcement-2.png?time=1609235610" width="700" height="400">
 
 # No Ticket Today!
 
