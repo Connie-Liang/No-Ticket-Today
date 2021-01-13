@@ -4,7 +4,7 @@
 
 An object detection project to spot pesky Parking Enforcement vehicles before they spot you!
 
-    Tools: [Sixgill Sense, Dectectron2, Torch, Torchvision, Pyyaml, Pycocotools, Pillow, Numpy, os, json, cv2, random, Tensorboard, Google CoLab]
+    Tools: [Sixgill Sense, Dectectron2, Torch, Torchvision, Pyyaml, Pycocotools, Pillow, Numpy, os, json, cv2, random, Tensorboard, Google CoLab, Kazam, VLC Media Player]
     
 "I love parking enforcement!!", said *no one ever*.
 
@@ -88,7 +88,7 @@ Here are some of my resulting prediction images:
 
 ## Interesting Observations:
 
-I noticed that while my model correctly predicted the front, side, multiple PE vehicles in an image, and even a partial view of a PE very well, it seemed to be having more trouble with the back part of the vehicle. More specifically, it had trouble differentiating between the back of a PE vehicle vs. the back of a regular car, so while the model typically still labeled the PE vehicle, it would also at times incorrectly label the back of a regular car as a PE vehicle:
+I noticed that while my model correctly predicted the front, side, multiple PE vehicles in an image, and even a partial view of a PE very well, it seemed to be having more trouble with the back part of the vehicle. More specifically, it had trouble differentiating between *the back of a PE vehicle* vs. *the back of a regular car*, so while the model typically still labeled the PE vehicle, it would also at times incorrectly label the back of a regular car as a PE vehicle:
 
 <img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_mistake.png">
 <img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_mistake2.png">
