@@ -26,11 +26,15 @@ It's a necessary job for sure, but maybe I'd like to know exactly when one of th
 
 I thought about using a script to query Google image results for 'PE vehicles', however, several problems arose: 
 
-   (a) What do I mean by 'PE vehicle'? In different countries or cities, PE vehicles can vary in size and shape. Some more advanced PE vehicles, for example, look more like a smart car. In contrast, the specific shape I am looking for is the pervasive rectangular/parallelogram type PE vehicle (see differentiation below).
+   (a) What do I mean by 'PE vehicle'? In different countries or cities, PE vehicles can vary in size and shape. Some more advanced PE vehicles, for example, look more like a smart car. In contrast, the specific shape I am looking for is the pervasive rectangular/parallelogram type PE vehicle (see below image).
    
    (b) I wanted my model to be able to identify PE vehicles from near or far, and with or without other distracting objects in the picture, which meant the PE vehicle could located anywhere on the image. If I used a script to pull images and then cropped them to the same size (because the images often have to be the same size to be trained), they may or may not correctly include the PE vechicle.
    
-So, I decided instead to pull frames from videos and use them as 'images'. This offered more advantages: abundance of images since I can control how many frames to grab per second, a variety of angles of the PE vehicle, a variety of backgrounds with differing objects in the images, and the images would be in the same size.
+So, I decided instead to pull frames from videos and use them as 'images'. This offered more advantages: 
+    - abundance of images since I can control how many frames to grab per second
+    - a variety of angles of the PE vehicle
+    - a variety of backgrounds with differing objects in the images
+    - the images would be in the same size.
 
 From YouTube, I found 34 videos featuring PE vehicles. I had trouble downloading the videos directly, so I used the 'Kazam' application to screen record them. Then I used the application 'VLC Media Player' to run each video through and set the amount of frames to grab.
 
@@ -41,7 +45,7 @@ My resulting dataset was 1700 images. Below is an example of one of the images:
 
 # 2. Image Processing
 
-Time for bounding boxes! There are various free sites that you can build bounding boxes with. We need to annotate the PE vehicles in each of our images so our model down the line slowly "learns" what to look for.
+Time for bounding boxes! There are various free sites that you can build bounding boxes with. I needed to annotate the PE vehicles in each of my images so my model down the line slowly "learns" what to look for.
 
 The annotation tool I used was called Sixgill Sense. You can imagine the more images you have, the more annotating you'll have to do...my hand was cramping by the time I finished!
 
@@ -49,10 +53,11 @@ I saved my finished annotations and images in a COCO format, which is one of pop
 
 My resulting files were: an 'img' folder with ALL the images in my dataset, and 3 separate json files for the dataset split into training, testing, and validation. Each json file contains a giant dictionary containing information about one of the images, such as its height, width, and bounding box coordinates. 
 
-Below are two images showing the bounding boxes drawn around the PE vehicles, as well as an example of what the resulting annotated files look like in COCO format:
+Below are two images showing the bounding boxes drawn around the PE vehicles:
 
 <img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step2_image1.png">
 <img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step2_image2.png">
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step2_image3.png">
 
 # 3. Object Detection
 
@@ -83,7 +88,7 @@ Here are some of my resulting prediction images:
 
 ## Interesting Observations:
 
-I noticed that while my model correctly predicted the front, side, multiple PE vehicles in an image, and even a partial part of a PE very well, it seemed to be having more trouble with the back part of the vehicle. More specifically, it had trouble differentiating between the back of a PE vehicle vs. the back of a regular car, so while the model typically still labeled the PE vehicle, it would also at times incorrectly label the back of a regular car as a PE vehicle:
+I noticed that while my model correctly predicted the front, side, multiple PE vehicles in an image, and even a partial view of a PE very well, it seemed to be having more trouble with the back part of the vehicle. More specifically, it had trouble differentiating between the back of a PE vehicle vs. the back of a regular car, so while the model typically still labeled the PE vehicle, it would also at times incorrectly label the back of a regular car as a PE vehicle:
 
 <img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_mistake.png">
 <img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_mistake2.png">
