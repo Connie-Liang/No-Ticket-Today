@@ -95,8 +95,8 @@ I noticed that while my model correctly predicted the front, side, multiple PE v
 
 From these mistakenly labeled images, I noticed further that these mistakes occured more frequently when:
 
-   a) the angle of the image made the back of both vehicles seem equivalent in size, even though in reality the size of a PE vehicle is significantly smaller than a regular car
-   b) there was less space between the PE vehicle and regular car
+1. the angle of the image made the back of both vehicles seem equivalent in size, even though in reality the size of a PE vehicle is significantly smaller than a regular car
+2. there was less space between the PE vehicle and regular car
 
 This is partly understandable as the back of a PE vehicle contains many similar features and structures as that of a regular car (tailights, wheels, boxy structure, back windshield) and is also less unique than the fronts or sides in shape.
 
