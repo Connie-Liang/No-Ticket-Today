@@ -67,12 +67,12 @@ Here is an image showing the framework of how an rcnn works:
 
 I got an Average Precision (AP) score of 82%. My confidence threshold was set at 90%, meaning the model will only categorize the object if the model determines with 90% or higher confidence that the object is a PE vehicle. 
 
-[![Success1](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_image1.png)](#)
-[![Success2](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_image2.png)](#)
-[![Success3](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_image3.png)](#)
-[![Success4](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_image4.png)](#)
-[![Success5](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_image5.png)](#)
-[![Success6](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_image6.png)](#)
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image1.png">
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image2.png">
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image3.png">
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image4.png">
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image5.png">
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image6.png">
 
 ## Interesting Observations:
 
