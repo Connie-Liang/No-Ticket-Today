@@ -36,7 +36,7 @@ From YouTube, I found 34 videos featuring PE vehicles. I had trouble downloading
 
 My resulting dataset was 1700 images. Below is an example of one of the images:
 
-![ScreenShot](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step1_image.png)
+![ScreenShot](https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step1_image.png)
 
 <img src="https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step1_image.png">
 
