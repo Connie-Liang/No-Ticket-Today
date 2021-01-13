@@ -36,7 +36,8 @@ From YouTube, I found 34 videos featuring PE vehicles. I had trouble downloading
 
 My resulting dataset was 1700 images. Below is an example of one of the images:
 
-[![Example_Image](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step1_image.png)](#)
+<img src="https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step1_image.png" width="600" height="350"><img src="https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step1_image.png" width="600" height="350">
+
 
 # 2. Image Processing
 
