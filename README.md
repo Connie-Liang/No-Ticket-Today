@@ -4,7 +4,7 @@
 
 An object detection project to spot pesky Parking Enforcement vehicles before they spot you!
 
-    Tools: [Sixgill Sense, Dectectron2, Torch, Torchvision, Pyyaml, Pycocotools, Pillow, Numpy, os, json, cv2, random, Tensorboard]
+    Tools: [Sixgill Sense, Dectectron2, Torch, Torchvision, Pyyaml, Pycocotools, Pillow, Numpy, os, json, cv2, random, Tensorboard, Google CoLab]
     
 "I love parking enforcement!!", said *no one ever*.
 
@@ -67,28 +67,37 @@ Here is an image showing the framework of how an rcnn works:
 
 I got an Average Precision (AP) score of 82%. My confidence threshold was set at 90%, meaning the model will only categorize the object if the model determines with 90% or higher confidence that the object is a PE vehicle. 
 
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_results1.png">
+
+Here are some of my resulting prediction images:
+
 <img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image1.png">
 <img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image2.png">
 <img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image3.png">
 <img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image4.png">
 <img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image5.png">
 <img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image6.png">
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image7.png">
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image8.png">
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_image9.png">
 
 ## Interesting Observations:
 
-I noticed that while my model correctly predicted the front, side, multiple PE vehicles in an image, and even a partial part of a PE very well, it seemed to be having more trouble with the back part of the vehicle. More specifically, it had trouble differentiating between the back of a PE vehicle and the back of a regular car, so while it would typically still labeled the PE vehicle, it would also incorrectly label the car as a PE vehicle. 
+I noticed that while my model correctly predicted the front, side, multiple PE vehicles in an image, and even a partial part of a PE very well, it seemed to be having more trouble with the back part of the vehicle. More specifically, it had trouble differentiating between the back of a PE vehicle vs. the back of a regular car, so while the model typically still labeled the PE vehicle, it would also at times incorrectly label the back of a regular car as a PE vehicle:
 
-[![Mislabeled](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_mistake.png)](#)
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_mistake.png">
+<img src="https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step4_mistake2.png">
 
 From these mistakenly labeled images, I noticed further that these mistakes occured more frequently when:
-- a. the angle of the image made the back of both vehicles seem equivalent in size, even though in reality the size of a PE vehicle is significantly smaller than a regular car
-- b. there was less space between the PE vehicle and regular car
+
+   a) the angle of the image made the back of both vehicles seem equivalent in size, even though in reality the size of a PE vehicle is significantly smaller than a regular car
+   b) there was less space between the PE vehicle and regular car
 
 This is partly understandable as the back of a PE vehicle contains many similar features and structures as that of a regular car (tailights, wheels, boxy structure, back windshield) and is also less unique than the fronts or sides in shape.
 
-## How Would We Improve Our Model?
+## How Could I Improve My Model?
 
-To improve our model, we should increase our dataset to include more images of the backside of PE vehicles and regular cars in the same image. We could also play with our parameter thresholds, such as increasing it to a higher confidence value to eliminate less confident detections. As a further idea, I could train "cars" as its own separate class and modify the model to differentiate between more classes.
+To improve my model, I should increase my dataset to include more images of the backside of PE vehicles and regular cars in the same image. I could also play with my parameter thresholds, such as increasing it to a higher confidence value to eliminate less confident detections. As a further idea, I could train "cars" as its own separate class and modify the model to differentiate between more classes.
 
 
 # Ideas for What's Next?
@@ -104,4 +113,4 @@ To improve our model, we should increase our dataset to include more images of t
 
 Thank you to:
 - Michelle Hoogenhoat for her troubleshooting support
-- Sage Elliot for Sixgill Sense and Detectron2 outline
+- Sage Elliot for Sixgill Sense guidance and help with an outline of Detectron2
