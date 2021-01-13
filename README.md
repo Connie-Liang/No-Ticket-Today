@@ -36,6 +36,7 @@ From YouTube, I found 34 videos featuring PE vehicles. I had trouble downloading
 
 My resulting dataset was 1700 images. Below is an example of one of the images:
 
+[![Example_Image](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step1_image.png)](#)
 
 # 2. Image Processing
 
@@ -49,6 +50,8 @@ My resulting files were: an 'img' folder with ALL the images in my dataset, and 
 
 Below are two images showing the bounding boxes drawn around the PE vehicles, as well as an example of what the resulting annotated files look like in COCO format:
 
+[![Annotated_Image1](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step2_image1.png)](#)
+[![Annotated_Image2](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step2_image2.png)](#)
 
 # 3. Object Detection
 
@@ -63,13 +66,22 @@ Here is an image showing the framework of how an rcnn works:
 
 I got an Average Precision (AP) score of 82%. My confidence threshold was set at 90%, meaning the model will only categorize the object if the model determines with 90% or higher confidence that the object is a PE vehicle. 
 
+[![Success1](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_image1.png)](#)
+[![Success2](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_image2.png)](#)
+[![Success3](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_image3.png)](#)
+[![Success4](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_image4.png)](#)
+[![Success5](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_image5.png)](#)
+[![Success6](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_image6.png)](#)
+
 ## Interesting Observations:
 
 I noticed that while my model correctly predicted the front, side, multiple PE vehicles in an image, and even a partial part of a PE very well, it seemed to be having more trouble with the back part of the vehicle. More specifically, it had trouble differentiating between the back of a PE vehicle and the back of a regular car, so while it would typically still labeled the PE vehicle, it would also incorrectly label the car as a PE vehicle. 
 
+[![Mislabeled](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step4_mistake.png)](#)
+
 From these mistakenly labeled images, I noticed further that these mistakes occured more frequently when:
-a. the angle of the image made the back of both vehicles seem equivalent in size, even though in reality the size of a PE vehicle is significantly smaller than a regular car
-b. there was less space between the PE vehicle and regular car
+- a. the angle of the image made the back of both vehicles seem equivalent in size, even though in reality the size of a PE vehicle is significantly smaller than a regular car
+- b. there was less space between the PE vehicle and regular car
 
 This is partly understandable as the back of a PE vehicle contains many similar features and structures as that of a regular car (tailights, wheels, boxy structure, back windshield) and is also less unique than the fronts or sides in shape.
 
@@ -84,7 +96,7 @@ To improve our model, we should increase our dataset to include more images of t
 
 2. I would like my model to detect more classes, such as officers or cars. Some parking enforcement is done by foot instead of by these types of PE vehicles, so if I could train my model to recognize uniformed officers, this could help close that gap. Creating a separate class for "cars" might also help the model learn to better differentiate between the backside of a regular car vs a PE vehicle. 
 
-The challenge I foresee for both these improvements would be requiring an excess of data. What constitutes a non-PE vehicle/regular car is so much more broad than the specific shape and type of PE vehicle the model is trained to find. As for the officers, it'll be hard to differentiate between officer vs regular pedestrian, or parking officer vs police officer vs business security officer, especially with different types and colors of uniforms.
+    The challenge I foresee for both these improvements would be requiring an excess of data. What constitutes a non-PE vehicle/regular car is so much more broad than the specific shape and type of PE vehicle the model is trained to find. As for the officers, it'll be hard to differentiate between officer vs regular pedestrian, or parking officer vs police officer vs business security officer, especially with different types and colors of uniforms.
 
 
 # Acknowledgements
