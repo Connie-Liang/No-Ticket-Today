@@ -36,9 +36,8 @@ From YouTube, I found 34 videos featuring PE vehicles. I had trouble downloading
 
 My resulting dataset was 1700 images. Below is an example of one of the images:
 
-![ScreenShot](https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step1_image.png)
+![step1_image_acquisition](https://raw.githubusercontent.com/Connie-Liang/No-Ticket-Today/main/image_examples/step1_image.png)
 
-<img src="https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step1_image.png">
 
 # 2. Image Processing
 
@@ -52,8 +51,8 @@ My resulting files were: an 'img' folder with ALL the images in my dataset, and 
 
 Below are two images showing the bounding boxes drawn around the PE vehicles, as well as an example of what the resulting annotated files look like in COCO format:
 
-[![Annotated_Image1](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step2_image1.png)](#)
-[![Annotated_Image2](https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step2_image2.png)](#)
+<img src="https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step2_image1.png">
+<img src="https://github.com/Connie-Liang/No-Ticket-Today/tree/main/image_examples/step2_image2.png">
 
 # 3. Object Detection
 
